@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Object</h1>
+    <h2>Create</h2>
+    <script>
+      var coworkers = {
+        programmer: "egoing",
+        designer: "hyeongjin",
+      };
+      document.write("programmer : " + coworkers.programmer + "<br>");
+      document.write("designer : " + coworkers.designer + "<br>");
+
+      coworkers.bookeeper = "duru"; // 일반적인 객체추가
+      document.write("bookeeper : " + coworkers.bookeeper + "<br>");
+
+      coworkers["data scientist"] = "taeho"; // 띄어쓰기가 들어간 객체추가
+      document.write(
+        "data scientist : " + coworkers["data scientist"] + "<br>"
+      );
+    </script>
+    <h2>Iterate(반복문)</h2>
+    <script>
+      for (var key in coworkers) {
+        document.write(key + ":" + coworkers[key] + "<br>");
+      }
+    </script>
+
+    <h2>Property & Method</h2>
+    <script>
+      coworkers.showAll = function () {
+        // == function showAll() {}
+        for (var key in this) {
+          document.write(key + ":" + this[key] + "<br>");
+        }
+      };
+      coworkers.showAll(); // 객체에 소속된 함수 = 메소드
+    </script>
+  </body>
+</html>
